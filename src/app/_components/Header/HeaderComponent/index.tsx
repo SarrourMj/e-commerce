@@ -21,7 +21,9 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         .filter(Boolean)
         .join(' ')}
     >
+
       <Gutter className={classes.wrap}>
+
         <Link href="/">
           <Image className="logo" src="/logo.png" alt="logo" width={170} height={75} />
         </Link>

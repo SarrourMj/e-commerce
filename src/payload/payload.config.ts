@@ -78,10 +78,10 @@ export default buildConfig({
   editor: slateEditor({}), // editor-config
   // database-adapter-config-start
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI,
+    url: process.env.DATABASE_URI || 'mongodb+srv://66e3d2d4aac063dec495c34a-prod:3d4cb3e9e3da5783c99b9316105b3b@66e3d2d4aac063dec495c34.ioanbsg.mongodb.net/66e3d2d4aac063dec495c34a-prod ' ,
   }),
   // database-adapter-config-end
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
+   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [Pages, Products, Orders, Media, Categories, Users],
   globals: [Settings, Header, Footer],
   typescript: {

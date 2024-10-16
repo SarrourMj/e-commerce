@@ -1,3 +1,4 @@
+import Icon from "../../payload/fields/richText/label/Icon";
 export const inclusions = [
   {
     title: 'Certified Courses',
@@ -46,4 +47,38 @@ export const profileNavItems = [
 
 export const noHeaderFooterUrls = ['/create-account', '/login', '/recover-password']
 
+
+export const SkillData = [
+  {
+    name: "EUROPEAN COLLEGE OF SPORT SCIENCE",
+    Image: "/ECOSC.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "EUROPEAN COMMISSION",
+    Image: "/EC.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "International council for coaching excellence",
+    Image: "/ICCE.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "ICSSPE",
+    Image: "/ICSSPE.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    name: "UNESCO",
+    Image: "/UNESCO.png",
+    width: 80,
+    height: 80,
+  },
+
+];
 

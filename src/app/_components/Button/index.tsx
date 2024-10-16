@@ -17,6 +17,9 @@ export type Props = {
   disabled?: boolean
   invert?: boolean
   children?: React.ReactNode
+  asChild?: boolean; 
+  size?: 'sm' | 'md' | 'lg';
+
 }
 
 export const Button: React.FC<Props> = ({
@@ -31,15 +34,18 @@ export const Button: React.FC<Props> = ({
   disabled,
   invert,
   children,
+  asChild,
+  size,
 }) => {
   let el = elFromProps
-
+  const sizeClass = size ? classes[`size--${size}`] : '';
   const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
   const className = [
     classes.button,
     classNameFromProps,
     classes[`appearance--${appearance}`],
+    sizeClass,
     invert && classes[`${appearance}--invert`],
   ]
     .filter(Boolean)
@@ -51,6 +57,11 @@ export const Button: React.FC<Props> = ({
       {children}
     </div>
   )
+  if (asChild) {
+    return (
+      <>{content}</> // Just render the content without any surrounding element
+    )
+  }
 
   if (onClick || type === 'submit') el = 'button'
 

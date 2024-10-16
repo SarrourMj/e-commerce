@@ -2,7 +2,6 @@ import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-
 import { Category, Page as P } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
@@ -13,7 +12,7 @@ import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 export const dynamic = 'force-dynamic'
-
+import DynamicSlider from '../../_components/DySlider/page'
 import Categories from '../../_components/Categories'
 import Promotion from '../../_components/Promotion'
 
@@ -56,6 +55,11 @@ export default async function Page({ params: { slug = 'home' } }) {
           <Hero {...hero} />
 
           <Gutter className={classes.home}>
+          <DynamicSlider 
+               backgroundImage={hero?.backgroundImage || '/default-bg.jpg'} 
+               title={hero?.title || 'Default Title'} 
+              subtitle={hero?.subtitle || 'Default Subtitle'} 
+          />
             <Categories categories={categories} />
             <Promotion />
           </Gutter>
