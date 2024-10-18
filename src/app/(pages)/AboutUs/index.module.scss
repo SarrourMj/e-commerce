@@ -1,0 +1,26 @@
+@import '../../_css/common';
+.aboutUssection{
+    height: 100vh;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageBody{
+    color: rgba(102, 11, 99, 0.942);
+    //height: 100vh;
+    scroll-snap-align: center;
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "DM Sans",sans-serif;
+    }
+    
+}
+.section{
+    height: 100vh;
+    scroll-snap-align:center ;
+  
+}
