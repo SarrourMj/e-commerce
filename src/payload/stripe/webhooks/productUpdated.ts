@@ -65,7 +65,7 @@ export const productUpdated: StripeWebhookHandler<{
 
     await payload.update({
       collection: 'products',
-      id: payloadProductID || 'defaultID',
+      id: payloadProductID,
       data: {
         // name: stripeProductName,
         // description: stripeDescription,

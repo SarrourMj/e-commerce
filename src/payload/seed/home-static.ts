@@ -1,37 +1,42 @@
 import type { Page } from '../payload-types'
 
-export const staticHome: Page = {
+export const staticCart: Page = {
   id: '',
-  title: 'Home',
-  slug: 'home',
+  title: 'Cart',
+  slug: 'cart',
   createdAt: '',
   updatedAt: '',
+  _status: 'published',
   meta: {
-    title: 'Payload E-Commerce Template',
-    description: 'An open-source e-commerce store built with Payload and Next.js.',
+    title: 'Cart',
+    description:
+      'Your cart will sync to your user profile so you can continue shopping from any device.',
   },
   hero: {
     type: 'lowImpact',
+    links: [],
+    media: '',
     richText: [
       {
+        type: 'h1',
         children: [
           {
-            text: 'Payload E-commerce Template',
+            text: 'Cart',
           },
         ],
-        type: 'h1',
       },
       {
+        type: 'p',
         children: [
           {
-            text: 'Welcome to your e-commerce store! ',
+            text: 'This cart saves to local storage so you can continue shopping later. Once you authenticate with Payload, your cart will sync to your user profile so you can continue shopping from any device. ',
           },
           {
-            text: 'Your database is currently empty.',
+            text: 'Your database does not have a cart page yet.',
             bold: true,
           },
           {
-            text: ' To seed your database with a few products and pages, ',
+            text: " You are currently seeing a demo page. To manage this page's content, ",
           },
           {
             type: 'link',
@@ -52,29 +57,7 @@ export const staticHome: Page = {
           },
         ],
       },
-      {
-        children: [
-          {
-            text: 'The code for this template is completely open-source and can be found ',
-          },
-          {
-            type: 'link',
-            linkType: 'custom',
-            url: 'https://github.com/payloadcms/payload/tree/main/templates/ecommerce',
-            newTab: true,
-            children: [
-              {
-                text: 'here',
-              },
-            ],
-          },
-          {
-            text: '.',
-          },
-        ],
-      },
     ],
-    media: '',
   },
   layout: [
     {
@@ -82,7 +65,7 @@ export const staticHome: Page = {
         {
           children: [
             {
-              text: 'Seed your database',
+              text: 'Create a cart page',
             },
           ],
           type: 'h4',
@@ -90,7 +73,7 @@ export const staticHome: Page = {
         {
           children: [
             {
-              text: 'Your database is currently empty. To seed your database, ',
+              text: 'Your database is does not have a cart page yet. To seed your database with a cart page, ',
             },
             {
               type: 'link',

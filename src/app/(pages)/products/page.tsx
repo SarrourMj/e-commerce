@@ -27,14 +27,13 @@ const Products = async () => {
       slug: 'products',
       draft: isDraftMode,
     })
-    console.log('Fetched page:', page)  // Add this line
-    console.log('Fetching categories')  // Add this line
+    console.log('Fetched page:', page)  
+    console.log('Fetching categories')  
     categories = await fetchDocs<Category>('categories')
   } catch (error) {
-    console.error('Error fetching data:', error)  // Change this line
+    console.error('Error fetching data:', error)  
   }
   if (!page) {
-    console.log('Products component is rendering')
     return <div>Error loading page content</div>
   }
 

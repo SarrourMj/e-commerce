@@ -96,23 +96,29 @@ export interface Page {
         blockType: 'cta';
       }
     | {
-        backgroundColor?: ('none' | 'yellow' | 'black' | 'purple') | null;
+        invertBackground?: boolean | null;
         columns?:
           | {
-              size: 'oneThird' | 'half' | 'twoThirds' | 'full';
-              alignment?: ('left' | 'center' | 'right') | null;
-              content?:
-                | {
-                    [k: string]: unknown;
-                  }[]
-                | null;
+              size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+              richText: {
+                [k: string]: unknown;
+              }[];
+              enableLink?: boolean | null;
+              link?: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                icon?: string | Media | null;
+                appearance?: ('default' | 'primary' | 'secondary') | null;
+              };
               id?: string | null;
             }[]
           | null;
-        accentLine?: boolean | null;
-        accentLineAlignment?: ('left' | 'right') | null;
-        paddingTop?: ('none' | 'small' | 'medium' | 'large') | null;
-        paddingBottom?: ('none' | 'small' | 'medium' | 'large') | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'content';
@@ -241,23 +247,29 @@ export interface Product {
             blockType: 'cta';
           }
         | {
-            backgroundColor?: ('none' | 'yellow' | 'black' | 'purple') | null;
+            invertBackground?: boolean | null;
             columns?:
               | {
-                  size: 'oneThird' | 'half' | 'twoThirds' | 'full';
-                  alignment?: ('left' | 'center' | 'right') | null;
-                  content?:
-                    | {
-                        [k: string]: unknown;
-                      }[]
-                    | null;
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  enableLink?: boolean | null;
+                  link?: {
+                    type?: ('reference' | 'custom') | null;
+                    newTab?: boolean | null;
+                    reference?: {
+                      relationTo: 'pages';
+                      value: string | Page;
+                    } | null;
+                    url?: string | null;
+                    label: string;
+                    icon?: string | Media | null;
+                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                  };
                   id?: string | null;
                 }[]
               | null;
-            accentLine?: boolean | null;
-            accentLineAlignment?: ('left' | 'right') | null;
-            paddingTop?: ('none' | 'small' | 'medium' | 'large') | null;
-            paddingBottom?: ('none' | 'small' | 'medium' | 'large') | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'content';
@@ -329,23 +341,29 @@ export interface Product {
             blockType: 'cta';
           }
         | {
-            backgroundColor?: ('none' | 'yellow' | 'black' | 'purple') | null;
+            invertBackground?: boolean | null;
             columns?:
               | {
-                  size: 'oneThird' | 'half' | 'twoThirds' | 'full';
-                  alignment?: ('left' | 'center' | 'right') | null;
-                  content?:
-                    | {
-                        [k: string]: unknown;
-                      }[]
-                    | null;
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  enableLink?: boolean | null;
+                  link?: {
+                    type?: ('reference' | 'custom') | null;
+                    newTab?: boolean | null;
+                    reference?: {
+                      relationTo: 'pages';
+                      value: string | Page;
+                    } | null;
+                    url?: string | null;
+                    label: string;
+                    icon?: string | Media | null;
+                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                  };
                   id?: string | null;
                 }[]
               | null;
-            accentLine?: boolean | null;
-            accentLineAlignment?: ('left' | 'right') | null;
-            paddingTop?: ('none' | 'small' | 'medium' | 'large') | null;
-            paddingBottom?: ('none' | 'small' | 'medium' | 'large') | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'content';

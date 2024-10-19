@@ -16,6 +16,7 @@ type RichText = (
   additions?: {
     elements?: RichTextElement[]
     leaves?: RichTextLeaf[]
+    editor?:[]
   },
 ) => RichTextField
 

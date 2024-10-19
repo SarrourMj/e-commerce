@@ -74,7 +74,7 @@ export default function Contact() {
           className={styles.phoneSvg}
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
-          transition={{ delay: 3, duration: 1 }}
+          transition={{ delay: 5, duration: 1 }}
         >
       <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
   <motion.path
