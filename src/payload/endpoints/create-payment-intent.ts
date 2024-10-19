@@ -35,8 +35,8 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
     // lookup user in Stripe and create one if not found
     if (!stripeCustomerID) {
       const customer = await stripe.customers.create({
-        email: fullUser?.email,
-        name: fullUser?.name,
+        email: fullUser?.email|| '',
+        name: fullUser?.name|| '',
       })
 
       stripeCustomerID = customer.id

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Metadata } from 'next'
 import { Jost } from 'next/font/google'
 
@@ -10,6 +10,7 @@ import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
+import { FilterProvider } from './_providers/Filter'
  
 const jost = Jost({
   subsets: ['latin'],
@@ -31,8 +32,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* @ts-expect-error */}
           <Header />
           <main className="main">{children}</main>
+          <Suspense fallback={<div>Loading footer...</div>}>
+
           {/* @ts-expect-error */}
           <Footer />
+          </Suspense>
+
         </Providers>
       </body>
     </html>

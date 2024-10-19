@@ -17,7 +17,6 @@ export const CALL_TO_ACTION = `
 export const CONTENT = `
 ...on Content {
   blockType
-  invertBackground
   columns {
     size
     richText

@@ -23,10 +23,15 @@ export default async function ContentBlockPage() {
           blockType="content"
           columns={[
             {
-              size: 'full',
-              richText: [
+              width: 'full',
+              alignment: 'left',
+              content: [
                 {
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                  children: [
+                    {
+                      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    },
+                  ],
                 },
               ],
             },

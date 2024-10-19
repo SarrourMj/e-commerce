@@ -749,18 +749,28 @@ enum Cta_Links_Link_appearance {
 }
 
 type Content {
-  invertBackground: Boolean
+  backgroundColor: Content_backgroundColor
   columns: [Content_Columns!]
+  accentLine: Boolean
+  accentLineAlignment: Content_accentLineAlignment
+  paddingTop: Content_paddingTop
+  paddingBottom: Content_paddingBottom
   id: String
   blockName: String
   blockType: String
 }
 
+enum Content_backgroundColor {
+  none
+  yellow
+  black
+  purple
+}
+
 type Content_Columns {
   size: Content_Columns_size
-  richText(depth: Int): JSON
-  enableLink: Boolean
-  link: Content_Columns_Link
+  alignment: Content_Columns_alignment
+  content(depth: Int): JSON
   id: String
 }
 
@@ -771,224 +781,29 @@ enum Content_Columns_size {
   full
 }
 
-type Content_Columns_Link {
-  type: Content_Columns_Link_type
-  newTab: Boolean
-  reference(draft: Boolean): Content_Columns_Link_Reference_Relationship
-  url: String
-  label: String
-  icon(where: Content_Columns_Link_Icon_where): Media
-  appearance: Content_Columns_Link_appearance
+enum Content_Columns_alignment {
+  left
+  center
+  right
 }
 
-enum Content_Columns_Link_type {
-  reference
-  custom
+enum Content_accentLineAlignment {
+  left
+  right
 }
 
-type Content_Columns_Link_Reference_Relationship {
-  relationTo: Content_Columns_Link_Reference_RelationTo
-  value: Content_Columns_Link_Reference
+enum Content_paddingTop {
+  none
+  small
+  medium
+  large
 }
 
-enum Content_Columns_Link_Reference_RelationTo {
-  pages
-}
-
-union Content_Columns_Link_Reference = Page
-
-input Content_Columns_Link_Icon_where {
-  alt: Content_Columns_Link_Icon_alt_operator
-  caption: Content_Columns_Link_Icon_caption_operator
-  updatedAt: Content_Columns_Link_Icon_updatedAt_operator
-  createdAt: Content_Columns_Link_Icon_createdAt_operator
-  url: Content_Columns_Link_Icon_url_operator
-  filename: Content_Columns_Link_Icon_filename_operator
-  mimeType: Content_Columns_Link_Icon_mimeType_operator
-  filesize: Content_Columns_Link_Icon_filesize_operator
-  width: Content_Columns_Link_Icon_width_operator
-  height: Content_Columns_Link_Icon_height_operator
-  focalX: Content_Columns_Link_Icon_focalX_operator
-  focalY: Content_Columns_Link_Icon_focalY_operator
-  id: Content_Columns_Link_Icon_id_operator
-  AND: [Content_Columns_Link_Icon_where_and]
-  OR: [Content_Columns_Link_Icon_where_or]
-}
-
-input Content_Columns_Link_Icon_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input Content_Columns_Link_Icon_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Content_Columns_Link_Icon_where_and {
-  alt: Content_Columns_Link_Icon_alt_operator
-  caption: Content_Columns_Link_Icon_caption_operator
-  updatedAt: Content_Columns_Link_Icon_updatedAt_operator
-  createdAt: Content_Columns_Link_Icon_createdAt_operator
-  url: Content_Columns_Link_Icon_url_operator
-  filename: Content_Columns_Link_Icon_filename_operator
-  mimeType: Content_Columns_Link_Icon_mimeType_operator
-  filesize: Content_Columns_Link_Icon_filesize_operator
-  width: Content_Columns_Link_Icon_width_operator
-  height: Content_Columns_Link_Icon_height_operator
-  focalX: Content_Columns_Link_Icon_focalX_operator
-  focalY: Content_Columns_Link_Icon_focalY_operator
-  id: Content_Columns_Link_Icon_id_operator
-  AND: [Content_Columns_Link_Icon_where_and]
-  OR: [Content_Columns_Link_Icon_where_or]
-}
-
-input Content_Columns_Link_Icon_where_or {
-  alt: Content_Columns_Link_Icon_alt_operator
-  caption: Content_Columns_Link_Icon_caption_operator
-  updatedAt: Content_Columns_Link_Icon_updatedAt_operator
-  createdAt: Content_Columns_Link_Icon_createdAt_operator
-  url: Content_Columns_Link_Icon_url_operator
-  filename: Content_Columns_Link_Icon_filename_operator
-  mimeType: Content_Columns_Link_Icon_mimeType_operator
-  filesize: Content_Columns_Link_Icon_filesize_operator
-  width: Content_Columns_Link_Icon_width_operator
-  height: Content_Columns_Link_Icon_height_operator
-  focalX: Content_Columns_Link_Icon_focalX_operator
-  focalY: Content_Columns_Link_Icon_focalY_operator
-  id: Content_Columns_Link_Icon_id_operator
-  AND: [Content_Columns_Link_Icon_where_and]
-  OR: [Content_Columns_Link_Icon_where_or]
-}
-
-enum Content_Columns_Link_appearance {
-  default
-  primary
-  secondary
+enum Content_paddingBottom {
+  none
+  small
+  medium
+  large
 }
 
 type MediaBlock {
@@ -1436,7 +1251,7 @@ type Product {
   id: String
   title: String
   publishedOn: DateTime
-  layout: [Product_Layout!]!
+  layout: [Product_Layout!]
   stripeProductID: String
   priceJSON: String
   enablePaywall: Boolean
@@ -4552,7 +4367,7 @@ type ProductVersion {
 type ProductVersion_Version {
   title: String
   publishedOn: DateTime
-  layout: [ProductVersion_Version_Layout!]!
+  layout: [ProductVersion_Version_Layout!]
   stripeProductID: String
   priceJSON: String
   enablePaywall: Boolean

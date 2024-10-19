@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import { Footer as FooterType } from '../../../payload/payload-types'
@@ -12,7 +13,7 @@ export async function Footer() {
   try {
     footer = await fetchFooter()
   } catch (error) {
-    console.log(error);
+    console.error('Error fetching footer:', error)
   }
 
   const navItems = footer?.navItems || []

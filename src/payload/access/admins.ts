@@ -6,7 +6,7 @@ import type { User } from '../payload-types'
 type isAdmin = (args: AccessArgs<unknown, User>) => boolean
 
 export const admins: isAdmin = ({ req: { user } }) => {
-  return checkRole(['admin'], user)
+  return checkRole(['admin'],user as User | null )
 }
 
 

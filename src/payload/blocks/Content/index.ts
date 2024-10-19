@@ -1,6 +1,5 @@
 import type { Block, Field } from 'payload/types'
 
-import { invertBackground } from '../../fields/invertBackground'
 import link from '../../fields/link'
 import richText from '../../fields/richText'
 import backgroundColor from '../../fields/backgroundColor'
@@ -37,7 +36,7 @@ const columnFields: Field[] = [
   link({
     overrides: {
       admin: {
-        condition: (_, { enableLink }) => Boolean(enableLink),
+        condition: (_: any, { enableLink }: { enableLink: boolean }) => Boolean(enableLink),
       },
     },
   }),
@@ -64,8 +63,8 @@ export const Content: Block = {
           type: 'row',
           fields: [
             {
-              name: 'width',
-              label: 'Column Width',
+              name: 'size',
+              label: 'size',
               type: 'select',
               defaultValue: 'full',
               required: true,
@@ -146,7 +145,7 @@ export const Content: Block = {
         },
       ],
       admin: {
-        condition: (_, siblingData) => siblingData.accentLine,
+        condition: (_: any, siblingData: any) => siblingData.accentLine,
         layout: 'horizontal',
       },
     },

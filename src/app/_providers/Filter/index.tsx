@@ -16,11 +16,11 @@ export const INITIAL_FILTER_DATA = {
   setSort: () => '',
 }
 
-const FilterContext = createContext<IContextType>(INITIAL_FILTER_DATA)
+const FilterContext = createContext<IContextType| undefined>(undefined)
 
-export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
-  const [categoryFilters, setCategoryFilters] = useState([])
-  const [sort, setSort] = useState('-createdAt')
+export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [categoryFilters, setCategoryFilters] = useState<string[]>([])
+  const [sort, setSort] = useState<string>('-createdAt')
 
   return (
     <FilterContext.Provider
@@ -36,4 +36,10 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export const useFilter = () => useContext(FilterContext)
+export const useFilter = () => {
+  const context = useContext(FilterContext)
+  if (context === undefined) {
+    throw new Error('useFilter must be used within a FilterProvider')
+  }
+  return context
+}

@@ -77,6 +77,7 @@ export default buildConfig({
   },
   editor: slateEditor({}), // editor-config
   // database-adapter-config-start
+  
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || 'mongodb+srv://66e3d2d4aac063dec495c34a-prod:3d4cb3e9e3da5783c99b9316105b3b@66e3d2d4aac063dec495c34.ioanbsg.mongodb.net/66e3d2d4aac063dec495c34a-prod ' ,
   }),
@@ -90,7 +91,8 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  cors: ['https://checkout.stripe.com', process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(
+  cors: ['https://checkout.stripe.com', process.env.PAYLOAD_PUBLIC_SERVER_URL || '',
+    'http://localhost:3000'].filter(
     Boolean,
   ),
   csrf: ['https://checkout.stripe.com', process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(

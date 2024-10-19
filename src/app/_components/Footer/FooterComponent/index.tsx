@@ -1,9 +1,9 @@
-'use client'
-
+"use Client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
 
 // eslint-disable-next-line import/namespace
 import { Footer, Media} from '../../../../payload/payload-types'
@@ -11,11 +11,18 @@ import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../consta
 import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
+
 import classes from './index.module.scss'
 
-const FooterComponent = ({ footer }: { footer: Footer }) => {
+
+const FooterComponent: React.FC<{ footer: Footer }> = ({ footer }) => {
   const pathname = usePathname()
+  if (!footer)
+  {
+    return null;
+  }
   const navItems = footer?.navItems || []
+
 
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
@@ -26,10 +33,11 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <Image
                 src={inclusion.icon}
                 alt={inclusion.title}
-                width={50}
-                height={50}
+                width={36}
+                height={36}
                 className={classes.icon}
               />
+
 
               <h5 className={classes.title}>{inclusion.title}</h5>
               <p>{inclusion.description}</p>
@@ -38,18 +46,22 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         </ul>
       </Gutter>
 
+
       <div className={classes.footer}>
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image src="/logo-white.png" alt="logo" width={400} height={200} />
+              <Image src="/logo-white.png" alt="logo" width={170} height={50} />
             </Link>
 
-            <p>{footer?.copyright}</p>
 
+            <div className={classes.socialLinks}>
+              <p>{footer?.copyright}</p>
+            </div>
             <div className={classes.socialLinks}>
               {navItems.map(item => {
                 const icon = item?.link?.icon as Media
+
 
                 return (
                   <Button
@@ -76,5 +88,6 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
     </footer>
   )
 }
+
 
 export default FooterComponent
