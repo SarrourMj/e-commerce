@@ -1,0 +1,108 @@
+.coursesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    margin: 40px 0;
+    background-color: #f0f0f0;
+    background-image: url('/assets/images/gym.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .courseCard {
+    position: relative;
+    width: 700px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    color: #333;
+    padding: 30px;
+    text-align: center;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  
+    &:hover {
+      background: rgba(255, 165, 0, 0.8);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+  
+    &:hover .courseTitle {
+      color: #7e1b6f;
+      font-size: 1.5rem;
+    }
+  
+    &:hover .button {
+      background-color: #ff9800;
+      transform: scale(1.1);
+      color:#7e1b6f;
+    }
+  
+    &:hover .courseDescription {
+      font-size: 1.2rem;
+      color:white;
+    }
+  }
+  
+  .courseTitle {
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s, font-size 0.3s;
+  }
+  
+  .courseDescription {
+    font-size: 1rem;
+    transition: font-size 0.3s;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin: 5px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .button {
+    padding: 12px 24px;
+    background-color: #7e1b6f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .customHr {
+    border: 0;                    // Remove the default border
+    height: 2px;                  // Adjust the height of the line
+    width: 200px;                 // Width of the centered portion
+    background-color: #ff9800;    // Orange shade, adjust to your liking
+    margin: 15px auto;            // Center it with auto margins
+    border-radius: 5px;  
+    z-index:2;
+  }
+  
+  .titleContainer {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  
+    h1 {
+      font-size: 64px;
+      font-weight: 300;
+      color: white;
+    }
+  }
+  

@@ -1,0 +1,252 @@
+.aboutUs {
+    background-color:#ffffff; // dark background with subtle purple
+    color: #ffffff; // white text for strong contrast
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+    // Logo Styling
+    .logo {
+      background-color: rgba(255, 255, 255, 0.801); // Light backdrop to neutralize purple
+      border-radius: 15px;
+      padding: 10px;
+      margin-bottom: 50px;
+
+      img {
+        width: 180px;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 50%; // circular effect for a modern look
+        box-shadow: 0px 10px 30px rgba(126, 27, 111, 0.6);
+      }
+
+      &:hover img {
+        transform: scale(1.2) rotate(10deg); // hover effect
+      }
+    }
+
+    // Video Section Styling
+    .videoContainer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px 0;
+      padding:10px;
+      position: relative;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      video {
+        width: 100%;
+        height: auto; // Ensuring the video fills the container
+      }
+
+      // Adding a futuristic border glow
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 4px solid rgba(126, 27, 111, 0.6);
+        pointer-events: none;
+        animation: glow 1.5s infinite alternate;
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 15px #7e1b6f;
+      }
+      100% {
+        box-shadow: 0 0 25px #d93dd5;
+      }
+    }
+
+    // Paragraph Section Styling
+    .description {
+      max-width: 800px;
+      margin-bottom: 60px;
+      font-size: 1.3rem;
+      line-height: 2;
+      color: #ddc8e3; // light lavender
+      letter-spacing: 1.2px;
+      position: relative;
+      padding: 20px;
+      background: rgba(126, 27, 111, 0.2); // semi-transparent backdrop
+      border-radius: 12px;
+      box-shadow: 0px 10px 30px rgba(126, 27, 111, 0.4);
+
+      h2 {
+        font-size: 2.8rem;
+        color: #6e226c; // slightly lighter purple for the heading
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #000000;
+      }
+    }
+
+    // Features Section Styling
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 60px;
+      width: 100%;
+      max-width: 1000px;
+
+      .feature {
+        background-color: #7e1b6f;
+        padding: 30px;
+        border-radius: 20px;
+        color: white;
+        width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+          transform: translateY(-10px) rotate(-2deg); // slight rotation hover
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        i {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          color: #ffffff; // icon color
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          margin: 15px 0;
+          color: #e0d3e5;
+        }
+
+        p {
+          font-size: 1.1rem;
+          color: #c3aed6;
+        }
+      }
+    }
+
+    // Additional Features Section (Innovative Ideas)
+    .innovationSection {
+      margin-top: 80px;
+      padding: 40px;
+      width: 100%;
+      max-width: 1100px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+
+      h2 {
+        font-size: 2.5rem;
+        color: #e1bee7;
+        margin-bottom: 30px;
+      }
+
+      .innovativeCards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .card {
+          background-color: #7e1b6f;
+          border-radius: 12px;
+          padding: 30px;
+          width: 280px;
+          text-align: center;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-10px); // lift effect on hover
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #efc1ef;
+          }
+        }
+      }
+    }
+
+    // IFBB Qatar Pictures Section
+    .picturesSection {
+      margin-top: 80px;
+      padding: 40px;
+      width: 100%;
+      max-width: 1100px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+
+      h2 {
+        font-size: 2.5rem;
+        color: #e1bee7;
+        margin-bottom: 30px;
+      }
+
+      .pictureCards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .card {
+          background-color: #7e1b6f;
+          border-radius: 12px;
+          width: 300px;
+          overflow: hidden;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease;
+
+          img {
+            width: 100%;
+            height: auto; // Ensuring the image fills the container
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-align: center;
+            margin: 15px 0;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #efc1ef;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+
+          &:hover {
+            transform: translateY(-5px); // lift effect on hover
+          }
+        }
+      }
+    }
+}

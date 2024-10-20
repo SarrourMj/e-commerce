@@ -10,7 +10,9 @@ import { Blocks } from '../../_components/Blocks'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
-
+import  News  from '../../_components/News'
+//import Feed from '../../_components/feedbacks'
+import Courses from '../../_components/Courses'
 
 export const dynamic = 'force-dynamic'
 import DynamicSlider from '../../_components/DySlider/page'
@@ -80,8 +82,9 @@ export default async function Page({ params: { slug = 'home' } }) {
          
           </Gutter>
           <Blocks blocks={layout} disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'} />
-
-
+          <News></News>
+          <Courses></Courses>
+          
         </section>
       ) : (
         <>
@@ -91,7 +94,9 @@ export default async function Page({ params: { slug = 'home' } }) {
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
         </>
-      )}
+      )
+    
+      }
     </React.Fragment>
   )
 }

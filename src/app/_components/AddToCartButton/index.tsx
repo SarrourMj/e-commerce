@@ -25,12 +25,15 @@ export const AddToCartButton: React.FC<{
   useEffect(() => {
     setIsInCart(isProductInCart(product))
   }, [isProductInCart, product, cart])
-
+  
+  const isAvailableSoon = product.categories?.some(category => 
+    typeof category !== 'string' && category.title === 'Available soon'
+  )
   return (
     <Button
       href={isInCart ? '/cart' : undefined}
       type={!isInCart ? 'button' : undefined}
-      label={isInCart ? `✓ View in cart` : `Add to cart`}
+      label={isInCart ? `✓ View in cart` : isAvailableSoon ? 'Available soon' :`Add to cart`}
       el={isInCart ? 'link' : undefined}
       appearance={appearance}
       className={[
@@ -38,11 +41,12 @@ export const AddToCartButton: React.FC<{
         classes.addToCartButton,
         appearance === 'default' && isInCart && classes.green,
         !hasInitializedCart && classes.hidden,
+        isAvailableSoon && classes.disabled,
       ]
         .filter(Boolean)
         .join(' ')}
       onClick={
-        !isInCart
+        !isInCart && !isAvailableSoon
           ? () => {
               addItemToCart({
                 product,
@@ -53,6 +57,7 @@ export const AddToCartButton: React.FC<{
             }
           : undefined
       }
+      disabled={isAvailableSoon}
     />
   )
 }

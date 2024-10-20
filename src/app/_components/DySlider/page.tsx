@@ -1,5 +1,6 @@
 "use client"; 
 
+
 import React from "react";
 import Slider from "react-slick"; 
 import "slick-carousel/slick/slick.css"; 
@@ -57,20 +58,22 @@ export const DynamicSlider: React.FC<SliderProps> = ({ backgroundImage, title, s
     <div
     style={{ backgroundImage: `url(${backgroundImage})` }}      className="h-screen w-screen flex items-center justify-center bg-cover bg-center"
     >
-      <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
+      <div className="flex flex-col gap-20 max-w-[80%] text-center items-center mx-auton">
         <div className="flex flex-col items-center gap-4">
           <h1 className="font-semibold text-white text-[50px]">
-          {" "} {" "} {" "} {" "} Recognized By {" "}
+          {" "} {" "} {" "} Recognized By {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
               {" "}{" "}  &{" "}
             </span>
             Affiliated To
           </h1>
+          <br></br>
+          <br></br>
           <p className="text-gray-400 text-[20px]">
           {" "} {" "} {" "} {" "} Endorsed by the World Authority of Fitness and Bodybuilding
           </p>
         </div>
-
+        <br></br>
         <Slider {...leftToRightSettings} className="max-w-[80%]">
           {SkillData.map((skill, index) => (
             <div key={index} className="p-4"> 

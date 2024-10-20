@@ -22,11 +22,13 @@
     "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload/payload.config.ts payload"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@payloadcms/bundler-webpack": "^1.0.3",
-    "@payloadcms/db-mongodb": "^1.0.0",
+    "@payloadcms/db-mongodb": "^1.7.3",
     "@payloadcms/plugin-cloud": "^3.0.2",
-    "@payloadcms/plugin-nested-docs": "^1.0.8",
-    "@payloadcms/plugin-redirects": "^1.0.1",
+    "@payloadcms/plugin-nested-docs": "^1.0.12",
+    "@payloadcms/plugin-redirects": "^1.0.2",
     "@payloadcms/plugin-seo": "^1.0.10",
     "@payloadcms/plugin-stripe": "^0.0.19",
     "@payloadcms/richtext-slate": "^1.0.0",
@@ -38,14 +40,18 @@
     "dotenv": "^8.2.0",
     "escape-html": "^1.0.3",
     "express": "^4.17.1",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.453.0",
     "next": "^14.2.13",
-    "payload": "^2.29.0",
+    "payload": "^2.30.3",
     "payload-admin-bar": "^1.0.6",
     "qs": "6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
     "react-router-dom": "5.3.4",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "stripe": "^10.2.0"
   },
   "devDependencies": {
@@ -72,7 +78,10 @@
     "prettier": "^2.7.1",
     "slate": "0.91.4",
     "ts-node": "^10.9.2",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
