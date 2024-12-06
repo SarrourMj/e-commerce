@@ -24,7 +24,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
 
       {user && <Link href="/account">Account</Link>}
 
-      {user && (
+     
         <div
           className={classes.dropdown}
           onMouseEnter={() => setIsDropdownOpen(true)}
@@ -53,9 +53,8 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
             )}
           </AnimatePresence>
         </div>
-      )}
-
-      {user && <Link href="/ContactUs">Contact Us</Link>}
+ 
+ <Link href="/ContactUs">Contact Us</Link>
 
       {!user && (
         <Button
